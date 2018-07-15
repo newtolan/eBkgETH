@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>  
+<html>  
+<head>
+  <meta charset="UTF-8" />
+    <title>MODEL PAGE</title>
+      <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>  
+      <script type="text/javascript">
+            var Ajax = function ()
+                  {
+                    $.getJSON ("booklist.json", function (data)
+                    {
+                        $.each (data, function (i, item)
+                        {
+                          $ ("#disp").append ("<h3>" + item.booker + "</h3>");     
+                          $ ("#disp").append ("<p>" + item.vans + "</p >");         
+                          $ ("#disp").append ("<p>" + item.ctnrtype + "</p >");              
+                      });          
+                    });      
+                }  
+       </script>
+</head>  
+<body>
+      <input type="button" value="Ajax提交" onclick="Ajax();" />
+      <div id="disp"></div>  
+</body>  
+</html>  

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Insert e-Booking</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        function writeJSON(){
+            var fso;
+            try { 
+                fso=new ActiveXObject("Scripting.FileSystemObject"); 
+            } catch (e) { 
+                alert("当前浏览器不支持");
+                return;
+              } 
+     
+             var file1 = fso.OpenTextFile("booklist.json");
+            
+        }
+
+    </script>  
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">Insert Booking</h1>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="bookingTemplate">
+        <div class="panel panel-default panel-booking">
+          <div class="panel-heading">
+            <h3 class="panel-title"></h3>
+          </div>
+          <div class="panel-body text-center">
+            <br/><br/>
+            <strong>booker</strong>: &nbsp&nbsp&nbsp<input type="text" name="booker" class="booking-booker"></input><br/><br/>
+            <strong>vans</strong>:  &nbsp&nbsp&nbsp&nbsp&nbsp <input type="text" name="vans" class="booking-vans"></input><br/><br/>
+            <strong>ctnrtype</strong>: <input type="text" name="ctnrtype" class="booking-ctnrtype"></input><br/><br/>
+            <button class="btn btn-default btn-insert" type="button" data-id="0">Confirm</button>
+          </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/add.js"></script>
+  </body>
+</html>
